@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/size_30"
+    android:paddingRight="@dimen/size_30">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_50"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edtName"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_50"
+            android:hint="Name"
+            android:paddingLeft="@dimen/size_15"
+            android:inputType="text"
+            android:background="@color/white"
+
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/blueTR40"
+            android:textSize="@dimen/size_16"
+            android:singleLine="true"
+            android:text="">
+        <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_50"
+            android:layout_marginTop="@dimen/size_20"
+            android:hint="Email"
+            android:paddingLeft="@dimen/size_15"
+            android:inputType="textEmailAddress"
+            android:background="@color/white"
+
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/blueTR40"
+            android:textSize="@dimen/size_16"
+            android:singleLine="true"
+            android:text=""/>
+
+        <TextView
+            android:id="@+id/tvSumbit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_50"
+            android:layout_marginTop="@dimen/size_20"
+            android:background="@color/colorPrimary"
+            android:textAllCaps="true"
+            android:text="Submit"
+            android:textAlignment="gravity"
+            android:gravity="center"
+            android:textSize="@dimen/size_16"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
