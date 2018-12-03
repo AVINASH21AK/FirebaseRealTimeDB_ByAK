@@ -2,14 +2,10 @@ package com.firebasedatabase.activity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.NonNull;
 import android.text.Html;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -20,26 +16,19 @@ import com.firebasedatabase.R;
 import com.firebasedatabase.model.User;
 import com.firebasedatabase.utils.App;
 import com.firebasedatabase.utils.Constants;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
 import com.orhanobut.hawk.Hawk;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ActHome extends BaseActivity {
+public class ActFirebaseDBHome extends BaseActivity {
 
-    String TAG = "ActHome";
+    String TAG = "ActFirebaseDBHome";
     @BindView(R.id.edtID) EditText edtID;
     @BindView(R.id.edtName) EditText edtName;
     @BindView(R.id.edtEmail) EditText edtEmail;
@@ -55,7 +44,7 @@ public class ActHome extends BaseActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ViewGroup.inflate(this, R.layout.act_home, llMainContainer);
+        ViewGroup.inflate(this, R.layout.act_firebasedbhome, llMainContainer);
         ButterKnife.bind(this);
 
 
@@ -98,7 +87,7 @@ public class ActHome extends BaseActivity {
                 @Override
                 public void onClick(View v) {
 
-                    App.hideSoftKeyboardMy(ActHome.this, tvTitle);
+                    App.hideSoftKeyboardMy(ActFirebaseDBHome.this, tvTitle);
                     String name = edtName.getText().toString().trim();
                     final User user = new User(strUserID, name, strEmail);
                     mFirebaseDatabase.child(strUserID).setValue(user);
@@ -111,7 +100,7 @@ public class ActHome extends BaseActivity {
                 @Override
                 public void onClick(View v) {
 
-                    App.hideSoftKeyboardMy(ActHome.this, tvTitle);
+                    App.hideSoftKeyboardMy(ActFirebaseDBHome.this, tvTitle);
                     showDeleteAlert();
 
                 }
@@ -157,9 +146,9 @@ public class ActHome extends BaseActivity {
             //-- Show dialog
             final AlertDialog.Builder builder;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                builder = new AlertDialog.Builder(ActHome.this, android.R.style.Theme_Material_Light_Dialog_Alert);
+                builder = new AlertDialog.Builder(ActFirebaseDBHome.this, android.R.style.Theme_Material_Light_Dialog_Alert);
             } else {
-                builder = new AlertDialog.Builder(ActHome.this);
+                builder = new AlertDialog.Builder(ActFirebaseDBHome.this);
             }
 
             String strMessage = "Your account will be deleted.";

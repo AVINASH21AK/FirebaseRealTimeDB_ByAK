@@ -12,11 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.firebasedatabase.R;
-import com.firebasedatabase.activity.ActHome;
-import com.firebasedatabase.activity.ActOption;
+import com.firebasedatabase.activity.ActFirebaseDBHome;
 import com.firebasedatabase.model.User;
 import com.firebasedatabase.utils.App;
 import com.firebasedatabase.utils.Constants;
@@ -30,9 +28,9 @@ import com.orhanobut.hawk.Hawk;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class FragLogin extends Fragment {
+public class FragFirebaseDBLogin extends Fragment {
 
-    String TAG = "FragLogin";
+    String TAG = "FragFirebaseDBLogin";
     @BindView(R.id.edtName) EditText edtName;
     @BindView(R.id.edtEmail) EditText edtEmail;
     @BindView(R.id.tvSumbit) TextView tvSumbit;
@@ -54,7 +52,7 @@ public class FragLogin extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frag_login, container, false);
+        View view = inflater.inflate(R.layout.frag_firebasedblogin, container, false);
 
         ButterKnife.bind(this, view);
 
@@ -161,7 +159,7 @@ public class FragLogin extends Fragment {
                                             Hawk.put(Constants.SHAREDPREFERENCE.UserName, globalModel.name);
                                             Hawk.put(Constants.SHAREDPREFERENCE.UserEmail, globalModel.email);
 
-                                            Intent i1 = new Intent(getActivity(), ActHome.class);
+                                            Intent i1 = new Intent(getActivity(), ActFirebaseDBHome.class);
                                             startActivity(i1);
 
                                         }

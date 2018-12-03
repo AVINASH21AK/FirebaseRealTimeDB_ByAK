@@ -4,13 +4,11 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 import com.firebasedatabase.R;
@@ -23,15 +21,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class FragSignUp extends Fragment {
+public class FragFirebaseDBSignUp extends Fragment {
 
-    String TAG = "FragSignUp";
+    String TAG = "FragFirebaseDBSignUp";
     @BindView(R.id.edtName) EditText edtName;
     @BindView(R.id.edtEmail) EditText edtEmail;
     @BindView(R.id.tvSumbit) TextView tvSumbit;
@@ -50,7 +45,7 @@ public class FragSignUp extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frag_signup, container, false);
+        View view = inflater.inflate(R.layout.frag_firebasedbsignup, container, false);
 
         ButterKnife.bind(this, view);
 

@@ -29,6 +29,7 @@ public class Constants {
     public static class MESSAGES{
 
         public static class VALIDATIONS{
+            public static String Password = "Enter password";
             public static String Name = "Enter name";
             public static String Email = "Enter email-id";
             public static String EmailInvalid = "Enter valid email-id";

@@ -48,5 +48,9 @@ dependencies {
     //-- Cloud Firebase https://firebase.google.com/docs/firestore/quickstart?authuser=0
     implementation 'com.google.firebase:firebase-firestore:17.1.3'
 
+
+    //-- Firebase Auth -- https://medium.com/mobiletech/firebase-authentication-sample-371b5940ba93
+    implementation 'com.google.firebase:firebase-auth:11.8.0'
+
 }
 apply plugin: 'com.google.gms.google-services'

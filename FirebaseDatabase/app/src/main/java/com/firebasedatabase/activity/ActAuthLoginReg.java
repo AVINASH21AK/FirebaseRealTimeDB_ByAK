@@ -1,6 +1,5 @@
 package com.firebasedatabase.activity;
 
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -12,8 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.firebasedatabase.R;
-import com.firebasedatabase.fragment.FragLogin;
-import com.firebasedatabase.fragment.FragSignUp;
+import com.firebasedatabase.fragment.FragAuthBLogin;
+import com.firebasedatabase.fragment.FragAuthSignUp;
+import com.firebasedatabase.fragment.FragFirebaseDBLogin;
+import com.firebasedatabase.fragment.FragFirebaseDBSignUp;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,9 +23,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class ActOption extends BaseActivity{
+public class ActAuthLoginReg extends BaseActivity{
 
-    String TAG = "ActOption";
+    String TAG = "ActFirebaseDatabseLoginReg";
 
     @BindView(R.id.tabLayout) TabLayout tabLayout;
     @BindView(R.id.viewPager) public ViewPager viewPager;
@@ -35,11 +36,11 @@ public class ActOption extends BaseActivity{
         super.onCreate(savedInstanceState);
 
         try {
-            ViewGroup.inflate(this, R.layout.act_option, llMainContainer);
+            ViewGroup.inflate(this, R.layout.act_firebasedatabaseloginreg, llMainContainer);
             ButterKnife.bind(this);
 
 
-           // startActivity(new Intent(ActOption.this, ActHome.class));
+           // startActivity(new Intent(ActFirebaseDatabseLoginReg.this, ActFirebaseDBHome.class));
 
             initialize();
             clickEvent();
@@ -92,8 +93,8 @@ public class ActOption extends BaseActivity{
 
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
 
-        adapter.addFragment(new FragLogin(), "Login");
-        adapter.addFragment(new FragSignUp(), "Register");
+        adapter.addFragment(new FragAuthBLogin(), "Login");
+        adapter.addFragment(new FragAuthSignUp(), "Register");
 
         viewPager.setAdapter(adapter);
         viewPager.setOffscreenPageLimit(adapter.getCount()); //-used to call all apis for all fragments.
